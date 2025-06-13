@@ -1,0 +1,191 @@
+ /* Custom CSS for basic styling and font-family, now integrated with Bootstrap */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s, filter 0.3s;
+            text-align: right; /* Ensure text aligns right for RTL */
+            background-color: #f8f9fa; /* Bootstrap's default light background */
+            color: #212529; /* Bootstrap's default text color */
+        }
+        .content-area {
+            transition: font-size 0.3s, line-height 0.3s, letter-spacing 0.3s;
+        }
+        /* Styles for high contrast theme */
+        body.high-contrast {
+            background-color: #000 !important; /* Black background */
+            color: #92e600 !important; /* Neon green text */
+        }
+        /* Styles for dark mode theme */
+        body.dark-mode {
+            background-color: #212529 !important; /* Dark gray background */
+            color: #f8f9fa !important; /* Light text */
+        }
+        /* Light mode explicit styles */
+        body.light-mode {
+            background-color: #f8f9fa !important;
+            color: #212529 !important;
+        }
+        /* Grayscale filter */
+        body.grayscale-mode {
+            filter: grayscale(100%);
+        }
+        /* Custom styling for color theme buttons */
+        .color-theme-button {
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             border: 2px solid #ced4da; /* Bootstrap gray border */
+             box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; /* Bootstrap shadow */
+             transition: transform 0.2s ease-in-out;
+             margin: 0 0.25rem; /* Small margin for spacing */
+             cursor: pointer;
+        }
+        .color-theme-button:hover {
+            transform: scale(1.05);
+        }
+        .color-theme-button:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25); /* Bootstrap's primary focus ring */
+        }
+        /* Styles for highlighted links */
+        .highlight-links a {
+            box-shadow: 0 0 0 4px #ffc107; /* Yellow ring around links (Bootstrap warning color) */
+            border-radius: 0.25rem; /* Bootstrap rounded corners */
+            padding: 0.25rem;
+        }
+        /* Modal specific adjustments for Bootstrap */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1050; /* Higher than Bootstrap's default modal z-index */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-overlay.visible {
+            display: flex; /* Show when visible */
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            position: relative;
+            text-align: right;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; /* Larger shadow for modals */
+        }
+        .modal-content .close-button {
+            position: absolute;
+            top: 10px;
+            left: 10px; /* Adjust for RTL */
+            background-color: #dc3545; /* Bootstrap danger color */
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 50%;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        /* Style for Arabic text input/output to ensure right-to-left */
+        .arabic-text-area {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* Floating AI Chatbot Button */
+        #chatbot-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a73e8; /* Google Blue */
+            color: white;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #chatbot-toggle-btn:hover {
+            background-color: #155bb5;
+            transform: scale(1.05);
+        }
+
+        /* Chatbot Modal Specific Styles */
+        #chatbot-modal .modal-content {
+            width: 100%;
+            max-width: 450px; /* Adjust size for chat window */
+            height: 90vh;
+            max-height: 700px;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        #chatbot-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            word-wrap: break-word;
+        }
+        .chat-message.user {
+            align-self: flex-end;
+            background-color: #0d6efd; /* Bootstrap primary */
+            color: white;
+            border-bottom-left-radius: 0.25rem;
+        }
+        .chat-message.ai {
+            align-self: flex-start;
+            background-color: #f8f9fa; /* Light background */
+            color: #212529; /* Dark text */
+            border: 1px solid #dee2e6;
+            border-bottom-right-radius: 0.25rem;
+        }
+        #chatbot-input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        #chatbot-input {
+            flex-grow: 1;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid #ced4da;
+        }
+        #chatbot-send-btn {
+            border-radius: 0.5rem;
+        }
+        #chatbot-loading {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Interactive Map Canvas Styles */
+        #interactive-map-canvas {
+            border: 1px solid #ced4da;
+            background-color: #f8f9fa;
+        }

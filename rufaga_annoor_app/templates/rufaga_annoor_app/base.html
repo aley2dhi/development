@@ -1,0 +1,103 @@
+{% load i18n %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="{{LANGUAGE_CODE}}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Rufaqa' Al-Noor - Smart Accessibility Initiative" data-ar="رفقاء النور - مبادرة الوصول الذكي">رفقاء النور - مبادرة الوصول الذكي</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" xintegrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" xintegrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR3 desirous7R+gM2wQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts - Inter (for better readability) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body id="content-area" class="content-area text-body">
+
+    <!-- Navigation Bar -->
+    {% include 'rufaga_annoor_app/navbar.html' %}
+
+    <!-- Draggable Menu -->
+     <div id="draggableMenuIcon">
+        <i class="fa fa-universal-access" aria-hidden="true"></i>
+    </div>
+
+    <div id="floatingMenuContent" class="d-none">
+        <div class="menu-header">
+            <button class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="menu-body">
+			<div class="d-flex flex-column align-items-center  mb-2">
+				<label class="text-primary h5" data-en-text="Font Size" data-ar-text="حجم الخط" >حجم الخط</label>
+				<div class="d-flex">
+					<button id="decrease-font" class="btn btn-danger btn-md">-</button>
+					<button id="increase-font" class="btn btn-success btn-md">+</button>
+				</div>
+            </div>
+			<div class="d-flex flex-column align-items-center mb-2">
+				<label class="text-primary h5" data-en-text="Colors Theme" data-ar-text="سمة الألوان">سمة الألوان</label>
+				<div class="d-flex h6">
+					<button id="light-theme" class="color-theme-button bg-light btn-md" aria-label="السمة الفاتحة">&nbsp;</button>
+					<button id="dark-theme" class="color-theme-button bg-dark" aria-label="السمة الداكنة">&nbsp;</button>
+					<button id="high-contrast-theme" class="color-theme-button bg-black" aria-label="السمة عالية التباين">&nbsp;</button>
+				</div>
+            </div>
+			<div class="d-flex flex-column align-items-center mb-2">
+				<label class="text-primary h5" data-en-text="Line Height" data-ar-text="ارتفاع السطر">ارتفاع السطر</label>
+				<div class="d-flex h6">
+					<button id="decrease-line-height" class="btn btn-secondary btn-md">-</button>
+					<button id="increase-line-height" class="btn btn-secondary btn-md">+</button>
+				</div>
+            </div>
+			<div class="d-flex flex-column align-items-center mb-2">
+				<label class="text-primary h5" data-en-text="Letter Spacing" data-ar-text="تباعد الأحرف" >تباعد الأحرف</label>
+				<div class="d-flex h6">
+					<button id="decrease-letter-spacing" class="btn btn-secondary btn-md">-</button>
+					<button id="increase-letter-spacing" class="btn btn-secondary btn-md">+</button>
+				</div>
+            </div>
+			<div class="d-flex flex-column align-items-center mb-2">
+				<label class="text-primary h5" data-en-text="Visual Aids" data-ar-text="المساعدات البصرية">المساعدات البصرية</label>
+				<div class="d-flex h6">
+					<button id="toggle-highlight-links" class="btn btn-warning btn-sm" data-en-text="Highlight Links" data-ar-text="تمييز الروابط">تمييز الروابط</button>
+					<button id="toggle-grayscale" class="btn btn-info btn-sm" data-en-text="Grayscale" data-ar-text="تدرج الرمادي">تدرج الرمادي</button>
+				</div>
+            </div>
+			 <div class="d-flex flex-column align-items-center mb-2">
+				<label class="text-primary h5" data-en-text="Reset ALl Settings" data-ar-text="إعادة تعيين الكل" >إعادة تعيين الكل</label>
+				<div class="d-flex h6">
+					<button id="reset-settings" class="btn btn-dark btn-md" data-en-text="Reset" data-ar-text="إعادة تعيين">إعادة تعيين</button>
+				</div>
+			</div>
+        </div>
+    </div>
+
+    {% block content %}
+        
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p data-en-text="&copy; 2025 Rufaqa' Al-Noor. All rights reserved." data-ar-text="&copy; 2025 رفقاء النور. جميع الحقوق محفوظة.">&copy; 2025 رفقاء النور. جميع الحقوق محفوظة.</p>
+            <p>
+                <a href="#" class="text-white mx-2" aria-label="Privacy Policy" data-en-label="Privacy Policy" data-ar-label="سياسة الخصوصية"><span data-en-text="Privacy Policy" data-ar-text="سياسة الخصوصية">سياسة الخصوصية</span></a> |
+                <a href="#" class="text-white mx-2" aria-label="Terms of Service" data-en-label="Terms of Service" data-ar-label="شروط الخدمة"><span data-en-text="Terms of Service" data-ar-text="شروط الخدمة">شروط الخدمة</span></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery (required for Bootstrap features like navbar toggle and dropdowns) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" xintegrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" xintegrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" xintegrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57B+UoqcJzKl3qT94tDaxdE3qBw==" crossorigin="anonymous"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفقاء النور</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles2.css' %}">
+</head>
+<body class="p-4">
+
+    <!-- Navigation Bar -->
+    <header class="bg-primary text-white p-3 rounded-3 shadow-lg mb-4">
+        <nav class="container-fluid d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+            <div class="h4 mb-0">رفقاء النور</div>
+            <div class="d-flex flex-wrap justify-content-center justify-content-sm-end gap-2">
+                <button id="speak-content-btn" class="btn btn-primary btn-lg">تحويل النص إلى كلام</button>
+                <button id="speech-to-text-btn" class="btn btn-success btn-lg">تحويل الكلام إلى نص (عربي)</button>
+                <button id="request-assistant-btn" class="btn btn-warning btn-lg">طلب مرافق</button>
+                <button id="schedule-appointment-btn" class="btn btn-info btn-lg">جدولة مواعيد</button>
+                <button id="sign-language-btn" class="btn btn-secondary btn-lg">دعم لغة الإشارة</button>
+                <button id="interactive-maps-btn" class="btn btn-dark btn-lg">خرائط تفاعلية</button>
+
+
+            </div>
+            <div>
+                <a href="{% url 'home' %}" class="btn btn-info btn-md">عودة إلى الصفحة الرئيسية</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container bg-white rounded-3 shadow-lg p-4 p-md-5">
+        <h1 class="display-5 fw-bold mb-4 text-center">أهلاً بك في رفقاء النور</h1>
+
+        <!-- Accessibility Controls -->
+        <div class="mb-4 p-3 bg-light rounded-3 d-flex flex-column gap-4">
+            <!-- Font Size and Color Theme Controls -->
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <label for="font-size-select" class="text-primary h5 mb-2">حجم الخط:</label>
+                    <div class="d-flex gap-2">
+                        <button id="decrease-font" class="btn btn-danger btn-lg">أ-</button>
+                        <button id="increase-font" class="btn btn-success btn-lg">أ+</button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <span class="text-primary h5 mb-2">سمة الألوان:</span>
+                    <div class="d-flex gap-2">
+                        <button id="light-theme" class="color-theme-button bg-light" aria-label="السمة الفاتحة">&nbsp;</button>
+                        <button id="dark-theme" class="color-theme-button bg-dark" aria-label="السمة الداكنة">&nbsp;</button>
+                        <button id="high-contrast-theme" class="color-theme-button bg-black" aria-label="السمة عالية التباين">&nbsp;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Accessibility Controls -->
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <label class="text-primary h5 mb-2">ارتفاع السطر:</label>
+                    <div class="d-flex gap-2">
+                        <button id="decrease-line-height" class="btn btn-secondary btn-lg">السطر -</button>
+                        <button id="increase-line-height" class="btn btn-secondary btn-lg">السطر +</button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <label class="text-primary h5 mb-2">تباعد الأحرف:</label>
+                    <div class="d-flex gap-2">
+                        <button id="decrease-letter-spacing" class="btn btn-secondary btn-lg">الحرف -</button>
+                        <button id="increase-letter-spacing" class="btn btn-secondary btn-lg">الحرف +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toggle and Reset Controls -->
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <label class="text-primary h5 mb-2">المساعدات البصرية:</label>
+                    <div class="d-flex gap-2">
+                        <button id="toggle-highlight-links" class="btn btn-warning btn-lg">تمييز الروابط</button>
+                        <button id="toggle-grayscale" class="btn btn-info btn-lg">تدرج الرمادي</button>
+                    </div>
+                </div>
+                 <div class="d-flex flex-column align-items-center align-items-sm-start">
+                    <label class="text-primary h5 mb-2">إعادة تعيين الكل:</label>
+                    <div class="d-flex gap-2">
+                        <button id="reset-settings" class="btn btn-dark btn-lg">إعادة تعيين</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="content-area" class="content-area text-body">
+            <p class="mb-3">
+                هذه فقرة توضيحية مصممة لعرض ميزات الوصول لهذه الصفحة. يمكنك استخدام عناصر التحكم أعلاه لتغيير حجم الخط ونظام الألوان ليناسب احتياجاتك بشكل أفضل. هدفنا هو جعل محتوى الويب ممتعًا ومتاحًا للجميع، بما في ذلك كبار السن وذوي الإعاقة.
+            </p>
+            <p class="mb-3">
+                يمكن أن يساعد تعديل حجم الخط في الحالات التي يكون فيها النص صغيرًا جدًا بحيث لا يمكن قراءته بشكل مريح، مما يقلل من إجهاد العين ويحسن سهولة القراءة. توفر سمات الألوان خيارات لتفضيلات التباين المختلفة. على سبيل المثال، يمكن أن تكون السمة عالية التباين مفيدة بشكل خاص للمستخدمين الذين يعانون من أنواع معينة من عمى الألوان أو ضعف البصر.
+            </p>
+            <p class="mb-3">
+                نحن نؤمن بأن سهولة الوصول ليست مجرد ميزة، بل هي حق أساسي. من خلال توفير هذه الضوابط البسيطة، نهدف إلى تمكين المستخدمين من تخصيص تجربة التصفح الخاصة بهم، والتأكد من أن المعلومات متاحة بسهولة ويمكن هضمها للجميع. ملاحظاتك قيمة بينما نواصل تحسين تصميماتنا.
+            </p>
+            <h2 class="h3 fw-bold mt-4 mb-3">لماذا سهولة الوصول مهمة؟</h2>
+            <p class="mb-3">
+                تعني سهولة الوصول إلى الويب أن مواقع الويب والأدوات والتقنيات مصممة ومطورة بحيث يمكن للأشخاص ذوي الإعاقة استخدامها. وبشكل أكثر تحديدًا، يمكن للأشخاص إدراك الويب وفهمه والتنقل فيه والتفاعل معه، ويمكنهم المساهمة في الويب. تفيد سهولة الوصول إلى الويب الآخرين أيضًا، بما في ذلك كبار السن الذين تتغير قدراتهم بسبب الشيخوخة.
+            </p>
+            <ul class="list-unstyled space-y-2 mb-3">
+                <li><a href="#" class="text-decoration-none">تحسين قابلية الاستخدام</a> لجميع المستخدمين، وليس فقط ذوي الإعاقة.</li>
+                <li>تحسين تحسين محركات البحث (SEO).</li>
+                <li><a href="#" class="text-decoration-none">الامتثال للمتطلبات القانونية</a> والمعايير.</li>
+                <li>تعزيز صورة العلامة التجارية وتوسيع نطاق الجمهور.</li>
+            </ul>
+            <p class="mb-3">
+                تستخدم هذه الصفحة JavaScript بسيط وBootstrap لتطبيق هذه الميزات، مما يضمن تطبيق التغييرات ديناميكيًا واستمرارها عبر الجلسات باستخدام `localStorage`. وبهذه الطريقة، بمجرد تعيين إعداداتك المفضلة، سيتم تذكرها في المرة التالية التي تزور فيها الصفحة.
+            </p>
+            <p class="mb-3">
+                يرجى تجربة عناصر التحكم ومعرفة كيف تؤثر على تجربة القراءة الخاصة بك. نأمل أن تجعل هذه الميزات وقتك في صفحتنا أكثر راحة وإنتاجية.
+            </p>
+        </div>
+
+        <!-- Speech-to-Text Transcription Area -->
+        <div class="mt-4 p-3 bg-light rounded-3 shadow-sm">
+            <h3 class="h4 fw-bold mb-3 text-secondary">تحويل الكلام العربي إلى نص:</h3>
+            <textarea id="transcription-output" class="form-control p-3 h-auto border rounded-3 focus-ring text-body arabic-text-area" rows="4" placeholder="سيظهر النص العربي المنطوق هنا..."></textarea>
+            <p id="transcription-status" class="mt-2 small text-muted">انقر على "تحويل الكلام إلى نص (عربي)" للبدء.</p>
+        </div>
+
+        <!-- AI-Powered Text Simplification/Rewriting Section -->
+        <div class="mt-4 p-3 bg-secondary-subtle rounded-3 shadow-sm">
+            <h3 class="h4 fw-bold mb-3 text-info">تبسيط/إعادة صياغة النص (مدعوم بالذكاء الاصطناعي) ✨:</h3>
+            <textarea id="ai-text-input" class="form-control p-3 h-auto border rounded-3 focus-ring text-body arabic-text-area" rows="4" placeholder="أدخل النص العربي هنا لتبسيطه أو إعادة صياغته..."></textarea>
+            <button id="simplify-text-btn" class="btn btn-info btn-lg mt-3">تبسيط/إعادة صياغة النص ✨</button>
+            <p id="ai-status" class="mt-2 small text-muted"></p>
+            <h4 class="h5 fw-semibold mt-4 mb-2 text-info">النص الناتج:</h4>
+            <textarea id="ai-output" class="form-control p-3 h-auto border rounded-3 bg-light focus-ring text-body arabic-text-area" rows="4" readonly placeholder="سيظهر النص المبسّط/المعاد صياغته هنا..."></textarea>
+        </div>
+
+        <!-- Instant Feedback Section -->
+        <div class="mt-4 p-3 bg-success-subtle rounded-3 shadow-sm">
+            <h3 class="h4 fw-bold mb-3 text-success">تقييم فوري (صوتي/نصي):</h3>
+            <textarea id="feedback-text-input" class="form-control p-3 h-auto border rounded-3 focus-ring text-body arabic-text-area mb-3" rows="3" placeholder="اكتب ملاحظاتك هنا..."></textarea>
+            <button id="record-feedback-btn" class="btn btn-outline-success btn-lg mb-2"><i class="fas fa-microphone"></i> تسجيل الملاحظات الصوتية</button>
+            <button id="submit-feedback-btn" class="btn btn-success btn-lg mb-2"><i class="fas fa-paper-plane"></i> إرسال التقييم</button>
+            <p id="feedback-status" class="mt-2 small text-muted"></p>
+        </div>
+
+    </div>
+
+    <!-- Floating AI Chatbot Button -->
+    <button id="chatbot-toggle-btn" class="btn btn-primary">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Modals for Sign Language and Interactive Maps -->
+    <!-- Sign Language Modal -->
+    <div id="sign-language-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="close-button" data-modal="sign-language-modal">X</button>
+            <h2 class="h3 fw-bold mb-4">دعم لغة الإشارة</h2>
+            <p>سيعرض هذا القسم مقاطع فيديو بلغة الإشارة ذات صلة بمحتوى الصفحة.</p>
+            <div class="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center rounded-3 mt-4">
+                <p class="text-muted">عنصر نائب لفيديو لغة الإشارة</p>
+                <!-- Placeholder for actual sign language video -->
+                <!-- <video controls src="your-sign-language-video.mp4" class="w-100 h-100"></video> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Maps Modal -->
+    <div id="interactive-maps-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="close-button" data-modal="interactive-maps-modal">X</button>
+            <h2 class="h3 fw-bold mb-4">خرائط داخلية تفاعلية</h2>
+            <p>سيعرض هذا القسم خرائط داخلية تفاعلية مع إرشادات صوتية للتنقل.</p>
+            <canvas id="interactive-map-canvas" width="400" height="300" class="border rounded-3 d-block mx-auto mt-4"></canvas>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <button id="map-move-forward" class="btn btn-primary"><i class="fas fa-arrow-up"></i> إلى الأمام</button>
+                <button id="map-turn-left" class="btn btn-primary"><i class="fas fa-undo-alt"></i> استدر يسارًا</button>
+                <button id="map-turn-right" class="btn btn-primary"><i class="fas fa-redo-alt"></i> استدر يمينًا</button>
+            </div>
+            <p id="map-guidance-status" class="mt-2 small text-muted text-center"></p>
+        </div>
+    </div>
+
+    <!-- Request Assistant Modal -->
+    <div id="request-assistant-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="close-button" data-modal="request-assistant-modal">X</button>
+            <h2 class="h3 fw-bold mb-4">طلب مرافق (موظف أو متطوع)</h2>
+            <form id="assistant-request-form">
+                <div class="mb-3">
+                    <label for="assistant-name" class="form-label">اسمك:</label>
+                    <input type="text" class="form-control" id="assistant-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="assistant-contact" class="form-label">رقم الاتصال/البريد الإلكتروني:</label>
+                    <input type="text" class="form-control" id="assistant-contact" required>
+                </div>
+                <div class="mb-3">
+                    <label for="assistant-details" class="form-label">تفاصيل الطلب:</label>
+                    <textarea class="form-control" id="assistant-details" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
+                <p id="assistant-request-status" class="mt-2 small text-muted"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Appointment Modal -->
+    <div id="schedule-appointment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="close-button" data-modal="schedule-appointment-modal">X</button>
+            <h2 class="h3 fw-bold mb-4">جدولة موعد</h2>
+            <form id="appointment-form">
+                <div class="mb-3">
+                    <label for="appointment-date" class="form-label">التاريخ:</label>
+                    <input type="date" class="form-control" id="appointment-date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="appointment-time" class="form-label">الوقت:</label>
+                    <input type="time" class="form-control" id="appointment-time" required>
+                </div>
+                <div class="mb-3">
+                    <label for="appointment-type" class="form-label">نوع الموعد:</label>
+                    <input type="text" class="form-control" id="appointment-type" placeholder="مثال: استشارة، مساعدة في التنقل" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">تأكيد الموعد</button>
+                <p id="appointment-status" class="mt-2 small text-muted"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Modal -->
+    <div id="chatbot-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="close-button" data-modal="chatbot-modal">X</button>
+            <h2 class="h3 fw-bold mb-4">مساعد رقمي ذكي (AI Chatbot)</h2>
+            <div id="chatbot-messages" class="flex-grow-1">
+                <!-- Chat messages will appear here -->
+                <div class="chat-message ai">أهلاً بك! كيف يمكنني مساعدتك اليوم في رفقاء النور؟</div>
+            </div>
+            <div id="chatbot-input-group">
+                <input type="text" id="chatbot-input" class="form-control" placeholder="اكتب رسالتك هنا..." dir="rtl">
+                <button id="chatbot-send-btn" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <p id="chatbot-loading" class="text-center text-muted mt-2 d-none">جاري الكتابة...</p>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'js/new.js' %}"></script>
+</body>
+</html>

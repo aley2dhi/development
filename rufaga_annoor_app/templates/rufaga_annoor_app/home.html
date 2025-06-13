@@ -1,0 +1,138 @@
+
+{% extends 'rufaga_annoor_app/base.html' %}
+
+{% block content %}
+        <div class="container mt-4">
+        <!-- Hero Section: Welcoming message and call to action -->
+        <section class="hero-section" id="home">
+            <h1 class="display-4 mb-3" data-en-text="Rufaqa' Al-Noor" data-ar-text="رفقاء النور">رفقاء النور</h1>
+            <p class="lead" data-en-text="The Comprehensive Smart System for Serving the Elderly, Blind, and People with Disabilities." data-ar-text="المنظومة الذكية الشاملة لخدمة كبار السن والمكفوفين وذوي الإعاقة.">المنظومة الذكية الشاملة لخدمة كبار السن والمكفوفين وذوي الإعاقة.</p>
+            <p data-en-text="Empowering independence and compassionate care through technology." data-ar-text="تمكين الاستقلالية والرعاية الرحيمة من خلال التكنولوجيا.">تمكين الاستقلالية والرعاية الرحيمة من خلال التكنولوجيا.</p>
+            <a href="#services" class="btn btn-lg btn-light mt-3" data-en-text="Explore Our Services" data-ar-text="استكشف خدماتنا">استكشف خدماتنا</a>
+        </section>
+
+        <!-- About Section: Vision and Mission -->
+        <section id="about" class="my-5">
+            <h2 class="text-center mb-4" data-en-text="About the Initiative" data-ar-text="عن المبادرة">عن المبادرة</h2>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header dropdown-toggle" type="button" tabindex="0" data-bs-toggle="collapse" data-bs-target="#imageOfInitiator" aria-expanded="false" aria-controls="imageOfInitiator" data-en-text="Initiative by Professor: Nasser Alithah Al-Qadi  " data-ar-text="مبادرة للإستاذ: ناصر عليثه القاضي   ">مبادرة للإستاذ: ناصر عليثه القاضي</div>
+                        <div class="card-body collapse" id="imageOfInitiator">
+                            <img class="imgofinitiator" src="{{MEDIA_ROOT}}/media/images/imageOfInitiator.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header" data-en-text="Our Vision" data-ar-text="رؤيتنا">رؤيتنا</div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="To transform ministry facilities and community interactions into fully inclusive, safe, and nurturing environments for all, powered by smart and compassionate solutions." data-ar-text="تحويل مرافق الوزارة والتفاعلات المجتمعية إلى بيئات شاملة وآمنة ومغذية للجميع، مدعومة بحلول ذكية ورحيمة.">تحويل مرافق الوزارة والتفاعلات المجتمعية إلى بيئات شاملة وآمنة ومغذية للجميع، مدعومة بحلول ذكية ورحيمة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header" data-en-text="Our Mission" data-ar-text="رسالتنا">رسالتنا</div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="To provide integrated, technology-driven services and a supportive community network that addresses the unique needs of the elderly, blind, and people with various disabilities, both within and outside ministry premises." data-ar-text="توفير خدمات متكاملة مدفوعة بالتكنولوجيا وشبكة مجتمعية داعمة تلبي الاحتياجات الفريدة لكبار السن والمكفوفين وذوي الإعاقة المختلفة، داخل وخارج مرافق الوزارة.">توفير خدمات متكاملة مدفوعة بالتكنولوجيا وشبكة مجتمعية داعمة تلبي الاحتياجات الفريدة لكبار السن والمكفوفين وذوي الإعاقة المختلفة، داخل وخارج مرافق الوزارة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section: Detailed breakdown of initiative components -->
+        <section id="services" class="my-5">
+            <h2 class="text-center mb-4" data-en-text="Our Services" data-ar-text="خدماتنا">خدماتنا</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-mobile-alt ml-1 mr-1"></i> <span data-en-text="1. Smart Application 'Rufaqa''" data-ar-text='1. التطبيق الذكي الشامل "رُفقاء"'>1. التطبيق الذكي الشامل "رُفقاء"</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="A multi-functional app with tailored visual/audio design, voice interface for the blind, interactive sign language, dynamic indoor maps, companion request, and automatic appointment scheduling." data-ar-text="تطبيق متعدد الوظائف بتصميم بصري وصوتي يناسب كل فئة، واجهة صوتية كاملة للمكفوفين، لغة إشارة تفاعلية، خرائط داخلية ديناميكية، وطلب مرافق خاص، وجدولة تلقائية للمواعيد.">تطبيق متعدد الوظائف بتصميم بصري وصوتي يناسب كل فئة، واجهة صوتية كاملة للمكفوفين، لغة إشارة تفاعلية، خرائط داخلية ديناميكية، وطلب مرافق خاص، وجدولة تلقائية للمواعيد.</p>
+                            <a href="{% url 'index' %}" data-en-text="Click here to access the application form" data-ar-text="اضغط هنا للدخول على نموذج للتطبيق">اضغط هنا للدخول على نموذج للتطبيق</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-user-friends ml-1 mr-1"></i> <span data-en-text="2. Smart Field Companion Services" data-ar-text="2. المرافق الذكي والميداني داخل المقرات">2. المرافق الذكي والميداني داخل المقرات</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="Trained staff, smart call-button seats, mobile robots for guidance, and dedicated 'Care Passages' within ministry branches ensuring comfortable visits." data-ar-text="موظفون مدربون، مقاعد ذكية بأزرار استدعاء، روبوتات متحركة للإرشاد، وتفعيل "ممرّات العناية" المخصصة داخل المباني لضمان زيارات مريحة.">موظفون مدربون، مقاعد ذكية بأزرار استدعاء، روبوتات متحركة للإرشاد، وتفعيل "ممرّات العناية" المخصصة داخل المباني لضمان زيارات مريحة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-truck ml-1 mr-1"></i> <span data-en-text="3. Smart Care Mobile Unit" data-ar-text="3. الوحدة المتنقلة للرعاية الذكية">3. الوحدة المتنقلة للرعاية الذكية</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="Mobile units visiting beneficiaries unable to attend in person, providing services like data updates, verification, and platform assistance with digital tools." data-ar-text="سيارات ذكية تجوب الأحياء لزيارة غير القادرين على الحضور، وتقديم خدمات تحديث البيانات، التحقق، والمساعدة في المنصات بتقنيات المساعدة الرقمية.">سيارات ذكية تجوب الأحياء لزيارة غير القادرين على الحضور، وتقديم خدمات تحديث البيانات، التحقق، والمساعدة في المنصات بتقنيات المساعدة الرقمية.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-network-wired ml-1 mr-1"></i> <span data-en-text="4. 'Rufaqa' Al-Noor' Community Network" data-ar-text="4. شبكة 'رفقاء النور' المجتمعية">4. شبكة "رفقاء النور" المجتمعية</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="A national network of trained and accredited volunteers, registered via the app, receiving special training and incentives to provide compassionate companionship." data-ar-text="شبكة وطنية من المتطوعين المدربين والمعتمدين، يسجلون عبر التطبيق، يتلقون تدريباً خاصاً ومحفزات لتقديم المرافقة الرحيمة.">شبكة وطنية من المتطوعين المدربين والمعتمدين، يسجلون عبر التطبيق، يتلقون تدريباً خاصاً ومحفزات لتقديم المرافقة الرحيمة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-robot ml-1 mr-1"></i> <span data-en-text="5. Smart Digital Assistant (AI)" data-ar-text="5. المساعد الرقمي الذكي (بالذكاء الاصطناعي)">5. المساعد الرقمي الذكي (بالذكاء الاصطناعي)</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="An AI-powered assistant for voice conversations in simple colloquial Arabic, explaining services, guiding users, and analyzing usage patterns to offer tailored assistance." data-ar-text="مساعد يعمل بالذكاء الاصطناعي لإجراء محادثات صوتية بالعامية البسيطة، شرح الخدمات، توجيه المستخدم، وتحليل نمط الاستخدام لتقديم المساعدة المخصصة.">مساعد يعمل بالذكاء الاصطناعي لإجراء محادثات صوتية بالعامية البسيطة، شرح الخدمات، توجيه المستخدم، وتحليل نمط الاستخدام لتقديم المساعدة المخصصة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><i class="fas fa-route ml-1 mr-1"></i> <span data-en-text="6. Service Journey Tracking System" data-ar-text="6. نظام تتبع الرحلة الخدمية">6. نظام تتبع الرحلة الخدمية</span></div>
+                        <div class="card-body">
+                            <p class="card-text" data-en-text="Real-time tracking of the beneficiary's journey from entry to service completion, with notifications for companions/family and instant service level reports for the Ministry." data-ar-text="تتبع فوري لرحلة المستفيد من لحظة دخوله حتى انتهاء الخدمة، مع إشعارات للمرافقين أو ذوي المستفيد، وتقارير فورية للوزارة حول مستوى الخدمة.">تتبع فوري لرحلة المستفيد من لحظة دخوله حتى انتهاء الخدمة، مع إشعارات للمرافقين أو ذوي المستفيد، وتقارير فورية للوزارة حول مستوى الخدمة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action: Volunteers registration -->
+        <section id="volunteers" class="my-5 text-center bg-light p-5 rounded-lg shadow-sm">
+            <h2 data-en-text="Join Our Movement: Become a 'Rufaqa' Al-Noor' Volunteer!" data-ar-text='انضم إلى حركتنا: كن متطوعاً في "رفقاء النور"!'>انضم إلى حركتنا: كن متطوعاً في "رفقاء النور"!</h2>
+            <p class="lead mt-3" data-en-text="Be a companion of light and make a real difference in the lives of the elderly, blind, and people with disabilities." data-ar-text="كن رفيقاً للنور وأحدث فرقاً حقيقياً في حياة كبار السن والمكفوفين وذوي الإعاقة.">كن رفيقاً للنور وأحدث فرقاً حقيقياً في حياة كبار السن والمكفوفين وذوي الإعاقة.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3" aria-label="سجل كمتطوع" data-en-label="Register as a volunteer"><i class="fas fa-hands-helping ml-1 mr-1"></i> <span data-en-text="Register as a Volunteer" data-ar-text="سجل كمتطوع">سجل كمتطوع</span></a>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="my-5">
+            <h2 class="text-center mb-4" data-en-text="Contact Us" data-ar-text="اتصل بنا">اتصل بنا</h2>
+            <div class="card p-4 mx-auto" style="max-width: 600px;">
+                <form>
+                    <div class="form-group">
+                        <label for="name" data-en-text="Your Name" data-ar-text="اسمك">اسمك</label>
+                        <input type="text" class="form-control" id="name" aria-required="true" data-en-placeholder="Enter your name" data-ar-placeholder="أدخل اسمك" placeholder="أدخل اسمك">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-en-text="Email address" data-ar-text="عنوان البريد الإلكتروني">عنوان البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="email" aria-required="true" aria-describedby="emailHelp" data-en-placeholder="Enter your email" data-ar-placeholder="أدخل بريدك الإلكتروني" placeholder="أدخل بريدك الإلكتروني">
+                        <small id="emailHelp" class="form-text text-muted text-right" data-en-text="We'll never share your email with anyone else." data-ar-text="لن نشارك بريدك الإلكتروني مع أي طرف آخر.">لن نشارك بريدك الإلكتروني مع أي طرف آخر.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-en-text="Subject" data-ar-text="الموضوع">الموضوع</label>
+                        <input type="text" class="form-control" id="subject" data-en-placeholder="Subject of your inquiry" data-ar-placeholder="موضوع استفسارك" placeholder="موضوع استفسارك">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-en-text="Message" data-ar-text="الرسالة">الرسالة</label>
+                        <textarea class="form-control" id="message" rows="5" aria-required="true" data-en-placeholder="Your message" data-ar-placeholder="رسالتك" placeholder="رسالتك"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" aria-label="إرسال الرسالة" data-en-label="Send message"><i class="fas fa-paper-plane ml-1 mr-1"></i> <span data-en-text="Send Message" data-ar-text="إرسال الرسالة">إرسال الرسالة</span></button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+{% endblock content %}

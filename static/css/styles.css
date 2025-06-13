@@ -1,0 +1,320 @@
+body {
+            font-family: 'Inter', sans-serif; /* Recommended font */
+            background-color: #f8f9fa; /* Light grey background */
+            color: #343a40; /* Dark grey text */
+            text-align: inherit;            
+        }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: #007bff; /* Primary blue for navbar */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand, .nav-link {
+    color: white !important; /* Ensure brand and links are white */
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #e2e6ea !important; /* Lighter white on hover */
+}
+
+.hero-section {
+    /* Blue gradient background for a welcoming feel */
+    /* background: linear-gradient(45deg, #007bff, #0056b3); */
+    background-image: url("../../media/images/comunity.jpg");
+    background-size: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
+    color: black;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 15px; /* Rounded corners for the hero section */
+    margin: 20px auto; /* Center with margin */
+    max-width: 95%; /* Fluid width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+.card {
+    border-radius: 15px; /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    border: none; /* Remove default card border */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.card-header {
+    background-color: #007bff; /* Primary blue header for cards */
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+}
+
+.imgofinitiator {
+    width: 90%;
+    box-shadow: 0px 0px 12px 1px black;
+    border-radius: 50px 0px 50px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px; /* Rounded buttons */
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow at the top */
+}
+
+/* Accessibility improvements (sr-only for screen readers) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Custom styles for language switcher dropdown */
+.dropdown-menu {
+    border-radius: 8px; /* Rounded dropdown menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #343a40; /* Dark text for dropdown items */
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: #e9ecef; /* Light grey on hover/focus */
+    color: #007bff; /* Primary blue text on hover/focus */
+}
+
+.navbar-logo {
+    width: 4%;
+    border-radius: 50%;
+}
+
+/* =================================================== */
+        .container-fluid {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .section-placeholder {
+            min-height: 80vh; /* Make sections tall enough to enable scrolling */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #495057;
+            margin-bottom: 30px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+        .section-blue { background-color: #e0f2f7; } /* Light blue */
+        .section-green { background-color: #e6f7e0; } /* Light green */
+        .section-yellow { background-color: #fffde0; } /* Light yellow */
+        .slogan-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            font-size: 1.2em;
+            color: #343a40;
+            max-width: 800px; /* Limit width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Loading spinner and sparkle button styles are no longer strictly needed without API,
+           but kept for consistency or if you add local dynamic content. */
+        .loading-spinner {
+            display: none; /* Always hidden as there's no loading */
+            margin-top: 10px;
+        }
+        .loading-spinner.active {
+            display: block;
+        }
+
+        /* Custom button styling for sparkle effect */
+        .btn-sparkle {
+            background-color: #6f42c1; /* Purple */
+            border-color: #6f42c1;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 50px; /* Pill shape */
+            padding: 10px 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-sparkle:hover {
+            background-color: #5a3597;
+            border-color: #5a3597;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .btn-sparkle:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles for the draggable circular icon */
+        #draggableMenuIcon {
+            position: fixed; /* Stays in the viewport */
+            top: 20px; /* Initial position from top */
+            left: 20px; /* Initial position from left */
+            width: 60px; /* Size of the circular button */
+            height: 60px;
+            border-radius: 50%; /* Make it circular */
+            background-color: #007bff; /* Primary blue background */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem; /* Icon size */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+            cursor: grab; /* Indicate it can be dragged */
+            z-index: 1050; /* Ensure it's above other content */
+            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+		#draggableMenuIcon i {
+			font-size: 55px;
+		}
+		
+        #draggableMenuIcon:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        #draggableMenuIcon.dragging {
+            cursor: grabbing; /* Indicate active dragging */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* Darker shadow when dragging */
+            transform: scale(1); /* Reset scale when dragging */
+        }
+
+        /* Styles for the floating menu content (popup) */
+        #floatingMenuContent {
+            position: fixed; /* Position relative to viewport */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            padding: 15px;
+            z-index: 1049; /* Slightly lower z-index than the icon */
+            width: 150px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: top left; /* For potential scaling/sliding animations */
+        }
+        #floatingMenuContent.d-none {
+            opacity: 0;
+            pointer-events: none; /* Prevent interaction when hidden */
+            transform: scale(0.95); /* Slight scale down when hidden */
+        }
+        #floatingMenuContent:not(.d-none) {
+            opacity: 1;
+            pointer-events: auto; /* Allow interaction when visible */
+            transform: scale(1);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .menu-header h5 {
+            margin: 0;
+            color: #343a40;
+        }
+        .menu-header .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.2s ease;
+        }
+        .menu-header .close-btn:hover {
+            color: #000;
+        }
+		
+		/* Custom CSS for basic styling and font-family, now integrated with Bootstrap */
+        .content-area {
+            transition: font-size 0.3s, line-height 0.3s, letter-spacing 0.3s;
+        }
+        /* Styles for high contrast theme */
+        body.high-contrast {
+            background-color: #000 !important; /* Black background */
+            color: #92e600 !important; /* Neon green text */
+        }
+        /* Styles for dark mode theme */
+        body.dark-mode {
+            background-color: #212529 !important; /* Dark gray background */
+            color: #f8f9fa !important; /* Light text */
+        }
+        /* Light mode explicit styles */
+        body.light-mode {
+            background-color: #f8f9fa !important;
+            color: #212529 !important;
+        }
+        /* Grayscale filter */
+        body.grayscale-mode {
+            filter: grayscale(100%);
+        }
+        /* Custom styling for color theme buttons */
+        .color-theme-button {
+             width: 20px;
+             height: 20px;
+             border-radius: 50%;
+             border: 2px solid #ced4da; /* Bootstrap gray border */
+             box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; /* Bootstrap shadow */
+             transition: transform 0.2s ease-in-out;
+             margin: 0 0.25rem; /* Small margin for spacing */
+             cursor: pointer;
+        }
+        .color-theme-button:hover {
+            transform: scale(1.05);
+        }
+        .color-theme-button:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25); /* Bootstrap's primary focus ring */
+        }
+        /* Styles for highlighted links */
+        .highlight-links a {
+            box-shadow: 0 0 0 4px #ffc107; /* Yellow ring around links (Bootstrap warning color) */
+            border-radius: 0.25rem; /* Bootstrap rounded corners */
+            padding: 0.25rem;
+        }
