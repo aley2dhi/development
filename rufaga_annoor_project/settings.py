@@ -20,9 +20,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rofaga-annoor.onrender.com','*']
+ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://rofaga-annoor.onrender.com']
+#CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
@@ -130,7 +130,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(
-    BASE_DIR / 'media'
+    BASE_DIR , 'media'
 )
 
 # Default primary key field type
