@@ -1,6 +1,8 @@
 
 {% extends 'rufaga_annoor_app/base.html' %}
 
+{% load static %}
+
 {% block content %}
         <div class="container mt-4">
         <!-- Hero Section: Welcoming message and call to action -->
@@ -19,7 +21,7 @@
                     <div class="card h-100">
                         <div class="card-header dropdown-toggle" type="button" tabindex="0" data-bs-toggle="collapse" data-bs-target="#imageOfInitiator" aria-expanded="false" aria-controls="imageOfInitiator" data-en-text="Initiative by Professor: Nasser Alithah Al-Qadi  " data-ar-text="مبادرة للإستاذ: ناصر عليثه القاضي   ">مبادرة للإستاذ: ناصر عليثه القاضي</div>
                         <div class="card-body collapse" id="imageOfInitiator">
-                            <img class="imgofinitiator" src="{{MEDIA_ROOT}}/media/images/imageOfInitiator.jpg">
+                            <img class="imgofinitiator" src="{% static 'images/imageOfInitiator.jpg' %}">
                         </div>
                     </div>
                 </div>

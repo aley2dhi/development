@@ -1,7 +1,9 @@
     {% load i18n %}
+
+    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="شريط التنقل الرئيسي" data-en-label="Main Navigation">
         <div class="container">
-            <img class="navbar-logo" src="{{MEIDA_ROOT}}/media/images/logo2.jpg"> &nbsp; &nbsp;
+            <img class="navbar-logo" src="{% static 'images/logo2.jpg' %}"> &nbsp; &nbsp;
             <a class="navbar-brand" href="#" data-en-text="Rufaqa' Al-Noor" data-ar-text="رفقاء النور">رفقاء النور </a> 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل" data-en-label="Toggle navigation" data-ar-label="تبديل التنقل">
                 <span class="navbar-toggler-icon"></span>
